@@ -1,11 +1,7 @@
-from flask import render_template
+from flask import Flask, render_template, url_for, redirect
 from app import app
 
-@app.route("/home")
+@app.route("/index")
 @app.route("/")
 def index():
     return render_template('index.html')
-
-@app.route("/base")
-def login():
-    return render_template('base.html')
