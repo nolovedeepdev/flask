@@ -15,25 +15,75 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link href="C:\Users\labvis\Documents\flask\app\static\css\modern-business.css" rel="stylesheet">
+  <style>
+    
+    @media (min-width: 992px) {
+    .animate {
+      animation-duration: 0.3s;
+      -webkit-animation-duration: 0.3s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both;
+      }
+    }
 
+    @keyframes slideIn {
+      0% {
+        transform: translateY(1rem);
+          opacity: 0;
+        }
+      100% {
+        transform:translateY(0rem);
+        opacity: 1;
+        }
+      0% {
+        transform: translateY(1rem);
+        opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes slideIn {
+        0% {
+          -webkit-transform: transform;
+          -webkit-opacity: 0;
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          -webkit-opacity: 1;
+          }
+        0% {
+          -webkit-transform: translateY(1rem);
+          -webkit-opacity: 0;
+          }
+        }
+
+        .slideIn {
+          -webkit-animation-name: slideIn;
+            animation-name: slideIn;
+          }
+
+          /* Other styles for the page not related to the animated dropdown */
+
+          body {
+            background: #007bff;
+            background: linear-gradient(to right, #0062E6, #33AEFF);
+          }
+  </style>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">LABVIS</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <a class="navbar-brand" href="#"> <strong>LABVIS</strong> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contato</a>
+            <a class="nav-link" href="about.html">Sobre o Projeto</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +96,7 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Referências
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
@@ -56,21 +106,28 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Outras paginas
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-              <a class="dropdown-item" href="faq.html">FAQ</a>
-              <a class="dropdown-item" href="404.html">404</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mais
+          </a>
+          
+            <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+            <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Contato</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  
+  <div class="container text-center">
+    <h1 class="mt-5 text-white font-weight-light">Animated Bootstrap Navbar Dropdowns</h1>
+    <p class="lead text-white-50">An attractive yet subtle dropdown animation for dropdown menus loacated within a Bootstrap navbar</p>
+  </div>
+<!--end navigation-->
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -80,7 +137,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: src('http://placehold.it/1900x1080')">
+        <div class="carousel-item active" style="background-image: src('https://venngage-wordpress-pt.s3.amazonaws.com/uploads/2018/09/entrance.png/1900x1080')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Bar Plot</h3>
             <p>This is a description for the first slide.</p>
@@ -121,34 +178,34 @@
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <h4 class="card-header">Gráfico de Barras</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="card-text">Apresentação dos gráficos de barra para interação.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Mais</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <h4 class="card-header">Gráfico de Pizza</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            <p class="card-text">Apresentação dos gráficos de pizza para interação.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Mais</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
+          <h4 class="card-header">Scatter Plot</h4>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <p class="card-text">Apresentação dos gráficos scatter plot para interação.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Mais</a>
           </div>
         </div>
       </div>
@@ -156,7 +213,7 @@
     <!-- /.row -->
 
     <!-- Portfolio Section -->
-    <h2>Portfolio Heading</h2>
+    <h2><strong>Gráficos</strong></h2>
 
     <div class="row">
       <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -164,9 +221,9 @@
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">Project One</a>
+              <a href="#">Gráfico 1</a>
             </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            <p class="card-text">Exemplo de gráfico de barra</p>
           </div>
         </div>
       </div>
@@ -228,34 +285,12 @@
     </div>
     <!-- /.row -->
 
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
-
     <hr>
 
     <!-- Call to Action Section -->
     <div class="row mb-4">
       <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+        <p>Gráficos de dados, tais como barra, linha e pizza, são amplamente utilizados em diversos contextos cotidianos das pessoas, desde propagandas em jornais, revistas e internet, passando pelo acompanhamento financeiro, até dados científicos, entre muitos outros. Dada a diversidade de cenários e propósitos de uso de dados, a área de Visualização da Informação (InfoVis) tem se expandido devido à sua capacidade de apresentar insights significativos sobre conjuntos de dados cada vez maiores e complexos.</p>
       </div>
       <div class="col-md-4">
         <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
@@ -268,7 +303,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; LABVIS</p>
     </div>
     <!-- /.container -->
   </footer>
