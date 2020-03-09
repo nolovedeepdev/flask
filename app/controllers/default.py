@@ -7,4 +7,14 @@ from app import app
 def index():
     return render_template('index.html')
 
+@app.route("/index/bar")
+def bar():
+    return render_template('gra-bar.html')
 
+@app.route("/pie")
+def pie():
+    return render_template('gra-pie.html')
+
+@app.route("/scatter")
+def scatter():
+    return render_template('gra-scatterplot.html')
