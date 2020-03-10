@@ -7,7 +7,7 @@ from app import app
 def index():
     return render_template('index.html')
 
-@app.route("/index/bar")
+@app.route("/bar")
 def bar():
     return render_template('gra-bar.html')
 
