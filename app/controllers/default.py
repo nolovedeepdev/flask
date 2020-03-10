@@ -18,3 +18,11 @@ def pie():
 @app.route("/scatter")
 def scatter():
     return render_template('gra-scatterplot.html')
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/refe")
+def refe():
+    return render_template("/refe.html")
