@@ -16,59 +16,30 @@
     <!-- Custom styles for this template -->
     <link href="C:\Users\labvis\Documents\flask\app\static\css\modern-business.css" rel="stylesheet">
     <style>
-        @media (min-width: 992px) {
-            .animate {
-                animation-duration: 0.3s;
-                -webkit-animation-duration: 0.3s;
-                animation-fill-mode: both;
-                -webkit-animation-fill-mode: both;
-            }
+        
+        .top-nav-collapse, .page-footer {
+            background-color: #563e91 !important;
         }
 
-        @keyframes slideIn {
-            0% {
-                transform: translateY(1rem);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(0rem);
-                opacity: 1;
-            }
-
-            0% {
-                transform: translateY(1rem);
-                opacity: 0;
-            }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
         }
 
-        @-webkit-keyframes slideIn {
-            0% {
-                -webkit-transform: transform;
-                -webkit-opacity: 0;
+        @media (max-width: 991px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #563e91 !important;
             }
-
-            100% {
-                -webkit-transform: translateY(0);
-                -webkit-opacity: 1;
-            }
-
-            0% {
-                -webkit-transform: translateY(1rem);
-                -webkit-opacity: 0;
-            }
-        }
-
-        .slideIn {
-            -webkit-animation-name: slideIn;
-            animation-name: slideIn;
         }
 
         /* Other styles for the page not related to the animated dropdown */
 
         body {
-            background: #3f51b5;
-            background: linear-gradient(to right, #ff5722 deep-orange, #ff7043 deep-orange lighten-1);
+            background: rgba(35, 7, 77, 0.6);;
+            background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
 
     </style>
@@ -77,206 +48,237 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
-            <link rel="shortcut icon" href="https://labvis-ufpa.github.io//favicon.png">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index">LABVIS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index"> <strong>LABVIS</strong> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="about">Sobre o Projeto</a>
+                        <a class="nav-link" href="about" data-offset="90">Sobre o projeto</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="refe"> Referências </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar" data-offset="90">Bar PLots</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gráficos
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="bar">Gráficos de barras</a>
-                            <a class="dropdown-item" href="pie">Gráficos de tortas</a>
-                            <a class="dropdown-item" href="scatter">Scatter plots</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pie" data-offset="90">Pie Plots</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Mais
-                        </a>
-
-                        <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
-                        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="http://labvis.ufpa.br/">LABVIS</a>
-                            <a class="dropdown-item" href="https://portal.ufpa.br/">UFPa</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Github do projeto</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="scatter" data-offset="30">Scatter Plots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://labvis.ufpa.br/" data-offset="90">O laboratório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/nolovedeepdev/flask" data-offset="90">UFPa</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div class="container text-center">
-        <h1 class="mt-5 text-white font-weight-light">Laboratório de Visualização, Interação e Sistemas Inteligentes </h1>
-        <p class="lead text-white-50">Instrução</p>
-    </div>
+    <!-- Navbar -->
     <!--end navigation-->
 
         <!-- Portfolio Section -->
-        <h2><strong>Gráficos</strong></h2>
 
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" url="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar0.png?raw=true" alt="LABVIS"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 1</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+        <header>
+            <div class="container">
+            
+                <hr class="mt-2 mb-5">
+            
+                <div class="row text-center text-lg-left">
+                
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie0.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" url="C:\Users\mathe\Documents\CBCC2020\LABVIS\flask\app\static\png\bar0.png" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 2</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie1.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 3</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie2.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/450x269" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 4</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie3.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 5</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie4.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 6</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie5.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" url="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar0.png?raw=true" alt="LABVIS"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 7</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie6.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" url="C:\Users\mathe\Documents\CBCC2020\LABVIS\flask\app\static\png\bar0.png" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">PGráfico 8</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie7.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 9</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie8.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/450x269" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 10</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie9.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 11</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie10.png?raw=true" alt="">
+                            </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Gráfico 12</a>
-                        </h4>
-                        <p class="card-text">Exemplo de gráfico de barra</p>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie11.png?raw=true" alt="">
+                            </a>
                     </div>
+    
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie12.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie13.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie14.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie15.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie16.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie17.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie18.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie19.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie20.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie21.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie22.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie23.png?raw=true" alt="">
+                            </a>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie24.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie25.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie26.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie27.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie28.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie29.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie30.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie31.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie32.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie33.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie34.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie35.png?raw=true" alt="">
+                            </a>
+                    </div>
+                    </div>
+                
                 </div>
-            </div>
-        </div>
-
-        
-        
-    <!-- /.row -->
+            <!-- /.container -->
 
     <hr>
 

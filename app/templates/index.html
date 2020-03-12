@@ -16,78 +16,30 @@
     <!-- Custom styles for this template -->
     <link href="C:\Users\labvis\Documents\flask\app\static\css\modern-business.css" rel="stylesheet">
     <style>
-        @media (min-width: 992px) {
-            .animate {
-                animation-duration: 0.3s;
-                -webkit-animation-duration: 0.3s;
-                animation-fill-mode: both;
-                -webkit-animation-fill-mode: both;
-            }
+
+        .top-nav-collapse, .page-footer {
+            background-color: #563e91 !important;
         }
 
-        @keyframes slideIn {
-            0% {
-                transform: translateY(1rem);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(0rem);
-                opacity: 1;
-            }
-
-            0% {
-                transform: translateY(1rem);
-                opacity: 0;
-            }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
         }
 
-        @-webkit-keyframes slideIn {
-            0% {
-                -webkit-transform: transform;
-                -webkit-opacity: 0;
+        @media (max-width: 991px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #563e91 !important;
             }
-
-            100% {
-                -webkit-transform: translateY(0);
-                -webkit-opacity: 1;
-            }
-
-            0% {
-                -webkit-transform: translateY(1rem);
-                -webkit-opacity: 0;
-            }
-        }
-
-        .slideIn {
-            -webkit-animation-name: slideIn;
-            animation-name: slideIn;
         }
 
         /* Other styles for the page not related to the animated dropdown */
 
         body {
-            background: #007bff;
-            background: linear-gradient(to right, #0062E6, #33AEFF);
-        }
-        .d-block{
-            width: 640;
-            height: 351;
-            padding: 10px;
-        }
-  
-        .carousel-item {
-            height: 65vh;
-            min-height: 30px;
-            background: no-repeat center center scroll;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-  
-        .portfolio-item {
-            margin-bottom: 10px;
+            background: rgba(35, 7, 77, 0.6);;
+            background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
 
     </style>
@@ -95,93 +47,46 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
-            <link rel="shortcut icon" href="https://labvis-ufpa.github.io//favicon.png">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index">LABVIS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index"> <strong>LABVIS</strong> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="about">Sobre o Projeto</a>
+                        <a class="nav-link" href="about" data-offset="90">Sobre o projeto</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="refe"> Referências </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar" data-offset="90">Bar PLots</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gráficos
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="bar">Gráficos de barras</a>
-                            <a class="dropdown-item" href="pie">Gráficos de tortas</a>
-                            <a class="dropdown-item" href="scatter">Scatter plots</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pie" data-offset="90">Pie Plots</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Mais
-                        </a>
-
-                        <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
-
-                        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="http://labvis.ufpa.br/">LABVIS</a>
-                            <a class="dropdown-item" href="https://portal.ufpa.br/">UFPa</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Github do projeto</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="scatter" data-offset="30">Scatter Plots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://labvis.ufpa.br/" data-offset="90">O laboratório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/nolovedeepdev/flask" data-offset="90">UFPa</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- Navbar -->
 
+    <!-- Iniciação -->
     <div class="container text-center">
         <h1 class="mt-5 text-white font-weight-light">Laboratório de Visualização, Interação e Sistemas Inteligentes </h1>
-        <p class="lead text-white-50">Instrução</p>
+        <p class="lead text-white-50"></p>
     </div>
     <!--end navigation-->
-    <header>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="bar"><img class="d-block w-100" href="bar" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/aa7.jpg?raw=true/640x351" alt="First slide"> </a>
-                
-            </div>
-              <div class="carousel-item">
-                <a href="pie"><img class="d-block w-100" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/aa8.jpg?raw=true" alt="Second slide"> </a>
-                 
-            </div>
-              <div class="carousel-item">
-                <a href="scatter"><img class="d-block w-100" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/aa9.jpg?raw=true" alt="Third slide"> </a>
-            </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-    </header>
     
     <!-- Page Content -->
     <div class="container">
@@ -401,7 +306,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      
+    <script>
+         // MDB Lightbox Init
+         $(function () {
+            $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+        });
+
+        // Adding animations to the sections
+        $("section").addClass("wow fadeIn");
+
+        // Animations Init
+        new WOW().init();
+    </script>
 </body>
 
 </html>
