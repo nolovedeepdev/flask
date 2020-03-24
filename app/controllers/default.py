@@ -26,3 +26,11 @@ def about():
 @app.route("/refe")
 def refe():
     return render_template("/refe.html")
+
+@app.route("/series")
+def series():
+    return render_template("/series.html")
+    
+@app.route("/linguagens")
+def ling():
+    return render_template("/linguagens.html")
