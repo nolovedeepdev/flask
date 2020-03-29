@@ -10222,4 +10222,19 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+/*! NAVBAR */
+.top-nav-collapse, .page-footer {
+  background-color: #563e91 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+      background: rgb(1, 16, 83) !important;
+  }
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
