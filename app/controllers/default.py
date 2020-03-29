@@ -1,17 +1,14 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, json, request
 from app import app
 
-@app.route("/index",methods= ['POST','GET'])
-@app.route("/")
+@app.route('/')
+@app.route('/index',methods= ['POST', 'GET'])
 def index():
     return render_template('index.html')
 
-@app.route('/api',methods= ['POST','GET'])
-def process():
-    try:
-        return render_template('api.html')
-    except expression as identifier:
-        return jsonify({'error' : 'Missing data!'})
+@app.route("/api",methods= ['POST','GET'])
+def api():
+    return render_template('api.html')
 
 @app.route("/bar",methods= ['POST','GET'])
 def bar():
