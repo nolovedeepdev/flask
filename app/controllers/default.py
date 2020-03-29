@@ -24,8 +24,15 @@ def scatter():
 
 @app.route("/about",methods= ['POST','GET'])
 def about():
-    return render_template('about.html')
+    return render_template('about.php')
 
 @app.route("/refe",methods= ['POST','GET'])
 def refe():
     return render_template("/refe.html")
+
+@app.route('/signUpUser', methods=['POST'])
+def signUpUser():
+    user =  request.form['username'];
+    password = request.form['password'];
+    return json.dumps({'status':'OK','user':user,'pass':password});
+
