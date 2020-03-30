@@ -4,6 +4,14 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
+/*! NAVBAR */
+        
+@media (max-width: 991px) {
+  .navbar {
+      background: rgb(1, 16, 83) !important;
+  }
+}
+
 body {
   padding-top: 56px;
     background: rgba(160, 155, 168, 0.6);;

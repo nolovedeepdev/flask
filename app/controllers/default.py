@@ -30,9 +30,3 @@ def about():
 def refe():
     return render_template("/refe.html")
 
-@app.route('/signUpUser', methods=['POST'])
-def signUpUser():
-    user =  request.form['username'];
-    password = request.form['password'];
-    return json.dumps({'status':'OK','user':user,'pass':password});
-
