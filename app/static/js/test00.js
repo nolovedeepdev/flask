@@ -25,3 +25,20 @@ function load_page(Document){
 	xhttp.send();
 
 }
+
+ $(function() {
+//twitter bootstrap script
+ 	$("#pagina_retorno").click(function(){
+        $.ajax({
+     		type: "POST",
+ 			url: "index",
+ 			data: $('arquivo').html(),
+        	success: function(msg){
+                alert(msg);
+         	},
+ 			error: function(){
+ 			alert("failure");
+ 			}
+       });
+ });
+});
