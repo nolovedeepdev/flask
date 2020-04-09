@@ -1,328 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <title>Labvis - Scatter plot</title>
+        <title>Labvis - Gráfico de Scatter</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="C:\Users\labvis\Documents\flask\app\static\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="C:\Users\labvis\Documents\flask\app\static\css\modern-business.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <style>
-        
-        .top-nav-collapse, .page-footer {
-            background-color: #563e91 !important;
-        }
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    </head>
 
-        .navbar:not(.top-nav-collapse) {
-            background: transparent !important;
-        }
-
-        @media (max-width: 991px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #563e91 !important;
-            }
-        }
-
-        /* Other styles for the page not related to the animated dropdown */
-
-        body {
-            background: rgba(35, 7, 77, 0.6);;
-            background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-        }
-
-        </style>
-   
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index">LABVIS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto smooth-scroll">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about" data-offset="90">Sobre o projeto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="bar" data-offset="90">Bar PLots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pie" data-offset="90">Pie Plots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="scatter" data-offset="30">Scatter Plots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://labvis.ufpa.br/" data-offset="90">O laboratório</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/nolovedeepdev/flask" data-offset="90">UFPa</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <p><br></p>
-    <p><br></p>
-    <div class="container text-center">
-        <h1 class="mt-5 text-white font-weight-light">Laboratório de Visualização, Interação e Sistemas Inteligentes </h1>
-        <p class="lead text-white-50">Scatter Plots</p>
-    </div>
-    <!--end navigation-->
-        
+    <body>
         <!-- Portfolio Section -->
-        <div class="container">
         
-            <hr class="mt-2 mb-5">
-        
-            <div class="row text-center text-lg-left">
-            
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar0.png?raw=true" alt="">
-                        </a>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar1.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar2.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar3.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar4.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar5.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar6.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar7.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar8.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar9.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar10.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar11.png?raw=true" alt="">
-                        </a>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar12.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar13.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar14.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar15.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar16.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar17.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar18.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar19.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar20.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar21.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar22.png?raw=true" alt="">
-                        </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar23.png?raw=true" alt="">
-                        </a>
-                </div>
-
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar24.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar25.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar26.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar27.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar28.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar29.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar30.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar31.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar32.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar33.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar34.png?raw=true" alt="">
-                    </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar35.png?raw=true" alt="">
-                    </a>
-            </div>
-            </div>
-        
+        <div class="container text-center">
+            <h1 class="mt-5 text-white font-weight-light"><br> Scatter Plots</h1>
         </div>
-        <!-- /.container -->
-            <!-- /.row -->
-            </header>
-            <hr>
 
-            <!-- Call to Action Section -->
-            <div class="row mb-4">
-                <div class="col-md-8">
-                    <p>Gráficos de dados, tais como barra, linha e pizza, são amplamente utilizados em diversos contextos cotidianos das pessoas, desde propagandas em jornais, revistas e internet, passando pelo acompanhamento financeiro, até dados científicos, entre muitos outros. Dada a diversidade de cenários e propósitos de uso de dados, a área de Visualização da Informação (InfoVis) tem se expandido devido à sua capacidade de apresentar insights significativos sobre conjuntos de dados cada vez maiores e complexos.</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-lg btn-secondary btn-block" href="#">Voltar ao topo</a>
+        <header>
+            <!--Pic test-->
+            <div class="photo-gallery">
+                <div class="container">
+                    <div class="intro">
+                    </div>
+                    <div class="row photos">
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="api" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar0.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar1.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar1.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar2.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar2.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar3.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar3.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar4.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar4.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar5.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar5.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar6.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar6.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar7.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png/bar7.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie0.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie0.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie1.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie1.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie2.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie2.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie3.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie3.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie4.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie4.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie5.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie5.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie6.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie6.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie7.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie7.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie8.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie8.png?raw=true"></a></div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie9.png?raw=true" data-lightbox="photos"><img class="img-fluid img-thumbnail" src="https://github.com/nolovedeepdev/flask/blob/master/app/static/png-pie/pie9.png?raw=true"></a></div>
+                    </div>
                 </div>
             </div>
 
-            </div>
-            <!-- /.container -->
+          <!--End Pic test-->
+        </header>
 
-        
-        
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Laboratório de Visualização, Interação e Sistemas Inteligentes</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
+    </body>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link src="/jquery/jquery.min.js">
+    <link src="/jquery/jquery.js">
+    <link src="app/static/jquery/jquery.slim.min.js">
+    <link src="/jquery/bootstrap.bundle.min.js">
+    <link src="/bootstrap/js/bootstrap.bundle.min.js">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-</body>
-
+    <!-- Core gallery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </html>

@@ -54,15 +54,6 @@
 
   /* Other styles for the page not related to the animated dropdown */
 
-  body {
-      background: rgba(160, 155, 168, 0.6);;
-      background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, rgba(17, 0, 255, 0.685), rgba(31, 255, 1, 0.6));
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  }
-
   .photo-gallery {
     color:#313437;
     background-color: transparent !important;

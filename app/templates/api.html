@@ -1,62 +1,23 @@
-<!DOCTYPE HTML>
-<html>
 <head>
-<head>
-  <meta charset="utf-8">
-  <title>Chart demo</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-  <style>
-  
-  </style>
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-</head>
-  
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 </head>
 <body>
-  <form action="" method="post"> 
-    
-  </form>
-  
-    <script>
-    window.onload = function () {
+  <div id="view"></div>
+  <script type="text/javascript">
+    var view;
 
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      theme: "light2", // "light1", "light2", "dark1", "dark2"
-      title:{
-        text: "Top Oil Reserves"
-      },
-      axisY: {
-        title: "Reserves(MMbbl)"
-      },
-      data: [{        
-        type: "column",  
-        showInLegend: true, 
-        legendMarkerColor: "grey",
-        legendText: "MMbbl = one million barrels",
-        dataPoints: [      
-          { y: 300878, label: "Venezuela" },
-          { y: 266455,  label: "Saudi" },
-          { y: 169709,  label: "Canada" },
-          { y: 158400,  label: "Iran" },
-          { y: 142503,  label: "Iraq" },
-          { y: 101500, label: "Kuwait" },
-          { y: 97800,  label: "UAE" },
-          { y: 80000,  label: "Russia" },
-          { y: 100000, label: "Brazil"}
-          
-        ]
-      }]
-    });
-    chart.render();
+    fetch('https://vega.github.io/vega/examples/bar-chart.vg.json')
+      .then(res => res.json())
+      .then(spec => render(spec))
+      .catch(err => console.error(err));
 
+    function render(spec) {
+      view = new vega.View(vega.parse(spec), {
+        renderer:  'canvas',  // renderer (canvas or svg)
+        container: '#view',   // parent DOM container
+        hover:     true       // enable hover processing
+      });
+      return view.runAsync();
     }
-    </script>
-  
-  <div id="chartContainer" style="width: 100%; height: 500px;"></div>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
-
+  </script>
 </body>
-</html>
