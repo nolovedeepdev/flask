@@ -1,14 +1,17 @@
 from flask import Flask, render_template, url_for, redirect, json, request
+
 from app import app
+
+from datetime import datetime
+
+import os
+
+import jinja2
 
 @app.route('/')
 @app.route('/index',methods= ['POST', 'GET'])
 def index():
     return render_template('index.html')
-
-@app.route("/api",methods= ['POST','GET'])
-def api():
-    return render_template('api.html')
 
 @app.route("/bar",methods= ['POST','GET'])
 def bar():
@@ -26,7 +29,11 @@ def scatter():
 def about():
     return render_template('about.php')
 
-@app.route("/refe",methods= ['POST','GET'])
-def refe():
-    return render_template("/refe.html")
-
+@app.route("/upload",methods= ['POST','GET'])
+def upload():
+    if request.files:
+        image = request.files["image"]
+        image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+        print("image saved")
+        return redirect(request.url)
+    return render_template('upload.html')

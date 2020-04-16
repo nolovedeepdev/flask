@@ -1,97 +1,130 @@
-/*! NAVBAR */
-/*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
+  
+        /*
+        *
+        * ==========================================
+        * FOR DEMO PURPOSE
+        * ==========================================
+        *
+        */
+        body {
+          background: #599fd9;
+          background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+          background: linear-gradient(to right, #599fd9, #c2e59c);
+          min-height: 100vh;
+          overflow-x: hidden;
+        }
 
-.vertical-nav {
-    min-width: 17rem;
-    width: 17rem;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
-  }
-  
-  .page-content {
-    width: calc(100% - 17rem);
-    margin-left: 17rem;
-    transition: all 0.4s;
-  }
-  
-  /* for toggle behavior */
-  
-  #sidebar.active {
-    margin-left: -17rem;
-  }
-  
-  #content.active {
-    width: 100%;
-    margin: 0;
-  }
-  
-  @media (max-width: 768px) {
-    #sidebar {
-      margin-left: -17rem;
-    }
-    #sidebar.active {
-      margin-left: 0;
-    }
-    #content {
-      width: 100%;
-      margin: 0;
-    }
-    #content.active {
-      margin-left: 17rem;
-      width: calc(100% - 17rem);
-    }
-  } 
+        .separator {
+          margin: 3rem 0;
+          border-bottom: 1px dashed #fff;
+        }
+        .text-uppercase {
+          letter-spacing: 0.1em;
+        }
+        .text-gray {
+          color: #aaa;
+        }
+          
+        /* Other styles for the page not related to the animated dropdown */
+        
+        /* css from back-to-top */
+        .back-to-top {
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display:none;
+        }
 
-  /* Other styles for the page not related to the animated dropdown */
+        /*Ajax from interactive charts*/
+        body {
+          font-family: 'Varela Round', sans-serif;
+        }
+        .modal-login {
+          width: 350px;
+        }
+        .modal-login .modal-content {
+          padding: 20px;
+          border-radius: 1px;
+          border: none;
+        }
+        .modal-login .modal-header {
+          border-bottom: none;
+              position: relative;
+          justify-content: center;
+        }
+        .modal-login h4 {
+          text-align: center;
+          font-size: 26px;
+        }
+          .modal-login .form-group {
+              margin-bottom: 20px;
+          }
+        .modal-login .form-control, .modal-login .btn {
+          min-height: 40px;
+          border-radius: 30px; 
+              font-size: 15px;
+              transition: all 0.5s;
+        }
+          .modal-login .form-control {
+              font-size: 13px;
+          }
+          .modal-login .form-control:focus {
+              border-color: #a177ff;
+          }
+        .modal-login .hint-text {
+          text-align: center;
+          padding-top: 10px;
+        }
+        .modal-login .close {
+              position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+        .modal-login .btn {
+          background: #a177ff;
+          border: none;
+          line-height: normal;
+        }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+          background: #8753ff;
+        }
+        .modal-login .hint-text a {
+          color: #999;
+        }
+        .trigger-btn {
+          display: inline-block;
+          margin: 100px auto;
+        }
 
-  .photo-gallery {
-    color:#313437;
-    background-color: transparent !important;
+/*css from upload.html*/
+.registration-form{
+  padding: 50px 0;
   }
-  
-  .photo-gallery p {
-    color:#7d8285;
+
+  .registration-form form{
+      background-color: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 50px 70px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
   }
-  
-  .photo-gallery h2 {
-    font-weight:bold;
-    margin-bottom:40px;
-    padding-top:40px;
-    color:inherit;
+
+  .registration-form .item{
+    border-radius: 20px;
+      margin-bottom: 25px;
+      padding: 10px 20px;
   }
-  
-  @media (max-width:767px) {
-    .photo-gallery h2 {
-      margin-bottom:25px;
-      padding-top:25px;
-      font-size:24px;
-    }
-  }
-  
-  .photo-gallery .intro {
-    font-size:16px;
-    max-width:500px;
-    margin:0 auto 40px;
-  }
-  
-  .photo-gallery .intro p {
-    margin-bottom:0;
-  }
-  
-  .photo-gallery .photos {
-    padding-bottom:20px;
-  }
-  
-  .photo-gallery .item {
-    padding-bottom:30px;
-  }
+
+
+  @media (max-width: 576px) {
+      .registration-form form{
+          padding: 50px 20px;
+      }
+
+
+  }    
