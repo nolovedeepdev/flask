@@ -15,18 +15,33 @@
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+  
   <div class="registration-form">
     <form action="/upload" emethod="POST" enctype=multipart/form-data>
-        <div id="view"></div>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" name="image" id="image">
-          <label class="custom-file-label" for="image">Select image...</label>
-        </div>
-        <button type="submit" class="btn btn-success">Upload image</button>
+      <!--Close button-->
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true"><a href="index">&times;</a></span>
+      </button>
+      <!--Static Image-->
+      <h4>Static</h4>
+      <img id="myimg" style="width: 450px; height: 275px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
+      
+      <!--Chart from VEGA to interact-->
+      <!-- <h4>Interact</h4>
+      <div id="view"></div> -->
+      
+      <h4><br></h4>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="image" id="image">
+        <label class="custom-file-label" for="image">Select image...</label>
+      </div>
+      <button type="submit" class="btn btn-success">Upload image</button>
     </form>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+</body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   
   <script type="text/javascript">
     var view;
@@ -45,5 +60,12 @@
       return view.runAsync();
     }
   </script>
-</body>
+
+  <script>
+    success: function(data) {
+      console.log(data);
+      $('#myimg').html(<img class="img-responsive"  src="'+data.image_url+'"/>);
+    }
+  </script>
+
 </html>
