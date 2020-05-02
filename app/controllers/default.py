@@ -48,8 +48,3 @@ def upload():
         print("image saved")
         return redirect(request.url)
     return render_template('upload.html')
-
-    
-
-
-    
