@@ -41,10 +41,10 @@ def main(): # função que percorre toda a imagem para encontrar os pixels
 
     for y in range(0, altura):
         for x in range(0, largura):
-            print(obj_img[y][x])
+            print('x: {} y: {}'.format(x,y))
 
 # route from interaction's page
-@app.route("/interact", methods= ['POST','GET'])   
+@app.route("/interact", methods= ['POST','GET'])
 def inte():
     return render_template('interact.html')
 
