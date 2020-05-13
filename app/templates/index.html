@@ -12,6 +12,7 @@
 
       <!-- Bootstrap core CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      
       <!-- Custom styles for this template -->
       <link href="/static/css/modern-business.css" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,14 +23,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-      <!--test-->
+      
+      <!--test VEGA-->
       <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
       
     </head>
 
     <body>
-      <!-- Vertical navbar -->
 
+      <!-- Vertical navbar -->
       <div class="vertical-nav bg-white" id="sidebar">
           <div class="py-4 px-3 mb-4 bg-light">
             <div class="media d-flex align-items-center"><img src="http://labvis.ufpa.br//images/logo.png" alt="LABVIS" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
@@ -133,40 +135,46 @@
                     <div class="intro">
                     </div>
                     <div class="row photos">
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar1.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar2.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar3.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar4.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar5.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar6.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar7.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar8.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar9.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar10.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar11.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar12.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar13.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar14.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar15.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar16.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar17.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar18.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar19.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar20.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar21.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar22.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar23.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar24.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar25.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar26.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
-                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img style="max-width: 250px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar27.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="upload">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar1.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar2.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar3.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar4.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar5.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar6.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar7.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar8.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar9.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar10.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar11.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar12.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar13.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar14.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar15.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar16.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar17.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar18.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar19.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar20.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar21.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar22.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar23.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar24.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar25.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar26.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
+                      <div class="col-sm-3 col-md-3 col-lg-3 item"><a href="#myModal" data-toggle="modal"><img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar27.png') }}"></a> <button type="button" class="btn btn-link btn-sm"><a href="interact">Interagir com o gráfico</a></button> </div>
 
                       </div>
                 </div>
             </div>
+            
 
             <!--End gallery-->
+            <div class="text-center">
+              <!-- Button HTML (to Trigger Modal) -->
+              <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
+            </div>
+
               <!-- Modal HTML -->
               <div id="myModal" class="modal fade">
                 <div class="modal-dialog modal-login">
@@ -220,8 +228,17 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       
+      <script>
+        $(function() {
+          // Sidebar toggle behavior
+          $('#sidebarCollapse').on('click', function() {
+            $('#sidebar, #content').toggleClass('active');
+          });
+        });
+
+      </script>
+
       <!-- Script from AJAX-->
-      
       <script>
         $(document).ready(function(){
           $("button").click(function(){

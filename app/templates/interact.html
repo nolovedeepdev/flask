@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <link rel="shortcut icon" href="https://labvis-ufpa.github.io//favicon.png">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABVIS - Interação</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/modern-business.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+  
+    <div class="registration-form">
+      <form action="/upload" emethod="POST" enctype=multipart/form-data>
+        <!--Close button-->
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true"><a href="index">&times;</a></span>
+        </button>
+        <!--Static Image-->
+        <h4>Static</h4>
+        <img id="myimg" style="width: 450px; height: 275px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
+
+        <!--Chart from VEGA to interact-->
+        <!-- <h4>Interact</h4>
+        <div id="view"></div> -->
+        
+        <h4><br></h4>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="image" id="image">
+          <label class="custom-file-label" for="image">Select image...</label>
+        </div>
+        <button type="submit" class="btn btn-success">Upload image</button>
+      </form>
+    </div>
+
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  
+  <!-- script for Vega -->
+  <script type="text/javascript">
+    var view;
+
+    fetch('https://vega.github.io/vega/examples/bar-chart.vg.json')
+      .then(res => res.json())
+      .then(spec => render(spec))
+      .catch(err => console.error(err));
+
+    function render(spec) {
+      view = new vega.View(vega.parse(spec), {
+        renderer:  'canvas',  // renderer (canvas or svg)
+        container: '#view',   // parent DOM container
+        hover:     true       // enable hover processing
+      });
+      return view.runAsync();
+    }
+  </script>
+
+  <!-- AJAx to take parametres of opencv to get coordinates of image on mouseclick -->
+  <script>
+    success: function(data) {
+      console.log(data);
+      $('#myimg').html(<img class="img-responsive"  src="'+data.image_url+'"/>);
+    }
+  </script>
+</html>

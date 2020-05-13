@@ -6,45 +6,46 @@ import jinja2
 import cv2
 from flask import jsonify
 
-#route from index's page
+# route from index's page
 @app.route('/')
-@app.route('/index',methods= ['POST', 'GET'])
+@app.route('/index', methods= ['POST', 'GET'])
 def index():
     return render_template('index.html')
 
-#route from bar
-@app.route("/bar",methods= ['POST','GET'])
+# route from bar's page
+@app.route("/bar", methods= ['POST','GET'])
 def bar():
     return render_template('gra-bar.html')
 
-#route from pie's page
-@app.route("/pie",methods= ['POST','GET'])
+# route from pie's page
+@app.route("/pie", methods= ['POST','GET'])
 def pie():
     return render_template('gra-pie.html')
 
-#route from scatter's page
-@app.route("/scatter",methods= ['POST','GET'])
+# route from scatter's page
+@app.route("/scatter", methods= ['POST','GET'])
 def scatter():
     return render_template('gra-scatterplot.html')
 
-# route from opencv to get coordinates of image on mouseclick
-@app.route("/capture")
-def capture_image(self):
-    return jsonify({'image_url': r'app/static/img'})
-    self.cam = cv2.VideoCapture(0)
-    self.img = self.cam.read()
-    self.cam.release()
-    render_template(upload.html,ob=self.img)
+img = 'C:/Users/computador/Documents/flask/app/static/img/bar0.png'
 
-# line what save images from client    
-app.config["IMAGE_UPLOADS"] = r"app/static/img/uploads"
+def showImage(img):
+    from matplotlib import pyplot as plt
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    plt.imshow(img)
+    plt.show()
 
-@app.route("/upload",methods= ['POST','GET'])
-def upload():
-    # upload images from client (future) 
-    if request.files:
-        image = request.files["image"]
-        image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
-        print("image saved")
-        return redirect(request.url)
-    return render_template('upload.html')
+def main(): # função que percorre toda a imagem para encontrar os pixels
+    obj_img = cv2.imread('img/bar0.png')
+    altura, largura, cores = obj_img.shape
+
+    for y in range(0, altura):
+        for x in range(0, largura):
+            print(obj_img[y][x])
+
+# route from interaction's page
+@app.route("/interact", methods= ['POST','GET'])   
+def inte():
+    return render_template('interact.html')
+
+
