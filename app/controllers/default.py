@@ -1,10 +1,9 @@
-from flask import Flask, render_template, url_for, redirect, json, request, Response
+from flask import Flask, render_template, url_for, redirect, json, request, Response, jsonify
 from app import app
 from datetime import datetime
 import os
 import jinja2
 import cv2
-from flask import jsonify
 
 # route from index's page
 @app.route('/')
@@ -27,25 +26,22 @@ def pie():
 def scatter():
     return render_template('gra-scatterplot.html')
 
-img = 'C:/Users/computador/Documents/flask/app/static/img/bar0.png'
+# route from interaction's page
+@app.route("/interact/", methods= ['POST','GET'])
+def inte():
+    return render_template('interact.html')
 
-def showImage(img):
-    from matplotlib import pyplot as plt
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    plt.imshow(img)
-    plt.show()
-
-def main(): # função que percorre toda a imagem para encontrar os pixels
-    obj_img = cv2.imread('img/bar0.png')
+@app.route("/interact/axis", methods= ['POST','GET'])
+def main(): # fuction that returns the axes
+    obj_img = cv2.imread(r'app/static/img/bar0.png')
     altura, largura, cores = obj_img.shape
 
     for y in range(0, altura):
         for x in range(0, largura):
-            print('x: {} y: {}'.format(x,y))
+            x = str(x); y = str(y)
 
-# route from interaction's page
-@app.route("/interact", methods= ['POST','GET'])
-def inte():
-    return render_template('interact.html')
+    return 'x={}, y={}; '.format(x,y)
 
+if __name__ == '__main__':
+    app.run()
 

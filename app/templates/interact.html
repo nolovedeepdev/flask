@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html lang="en">
+  <html lang="pt-br">
     <link rel="shortcut icon" href="https://labvis-ufpa.github.io//favicon.png">
   <head>
     <meta charset="UTF-8">
@@ -14,19 +14,29 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-  
+    
     <div class="registration-form">
       <form action="/upload" emethod="POST" enctype=multipart/form-data>
         <!--Close button-->
         <button type="button" class="close" aria-label="Close">
           <span aria-hidden="true"><a href="index">&times;</a></span>
         </button>
+        
         <!--Static Image-->
         <h4>Static</h4>
         <img id="myimg" style="width: 450px; height: 275px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
-
+        
+        <!--Axis grid-->
+        <div ></div>   
+        <div id="axis" class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Click</strong> na imagem para mostrar os eixos!.<br>
+        </div>
         <!--Chart from VEGA to interact-->
         <!-- <h4>Interact</h4>
         <div id="view"></div> -->
@@ -63,11 +73,29 @@
     }
   </script>
 
-  <!-- AJAx to take parametres of opencv to get coordinates of image on mouseclick -->
+  <!-- the AJAX function that communicates with backend's image (with a mouseclick) -->
   <script>
-    success: function(data) {
-      console.log(data);
-      $('#myimg').html(<img class="img-responsive"  src="'+data.image_url+'"/>);
-    }
+  document.getElementById("myimg").addEventListener('click', add); // take te id from img
+  function add()
+  {
+    const api_url = " http://127.0.0.1:5000/interact/axis";
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("axis").append(this.responseText); // where the axis info appears
+      }
+    };
+    xhttp.open("GET", api_url, true);
+    xhttp.send();
+  }
   </script>
+
+  <script>
+  $(document).ready(function(){
+    $(".close").click(function(){
+      $("#myAlert").alert("close");
+    });
+  });
+  </script>
+
 </html>
