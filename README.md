@@ -1,24 +1,26 @@
-# LABVIS TEMPLATE
+# Proposta e Avaliação de Templates de descrição Textual para vocalização
 
-### Proposta e Avaliação de Templates de descrição Textual para vocalização
+## Introdução 
 
 Intitulado Proposta e Avaliação de Templates de descrição Textual para vocalização de gráficos de barras, este projeto tem como objetivo criar uma aplicação web a qual visa extrair dados das imagens anexadas(upload) a aplicação web.
 
 ![Image description](print.png)
 
-# Tecnologies
+## Tecnologias
 
-Python 3.8 flask framework
+Python 3.8 Flask framework
 Opencv (python)
 
-# Installations
+## Instalação
 
 > pip install flask
-
-# Authors and acknowledgment
-
+> pip install flask-sqlalchemy
 
 
-# License
+## Autores
+
+Matheus Antônio Castro
+
+## License
 
 The MIT License (MIT) - Copyright (c) 2013-2019 Blackrock Digital LLC
