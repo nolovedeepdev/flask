@@ -14,109 +14,46 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       
       <!-- Custom styles for this template -->
-      <link href="/static/css/modern-business.css" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/modern-business.css') }}" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/navbarh.css') }}">
-      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-      <script src="https://vega.github.io/vega/vega.min.js"></script>
+      
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-      
-      <!--test VEGA-->
-      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-      
+  
     </head>
 
     <body>
-
-      <!-- Vertical navbar -->
-      <div class="vertical-nav bg-white" id="sidebar">
-          <div class="py-4 px-3 mb-4 bg-light">
-            <div class="media d-flex align-items-center"><img src="http://labvis.ufpa.br//images/logo.png" alt="LABVIS" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-              <div class="media-body">
-                <h4 class="m-0">LABVIS</h4>
-                <p class="font-weight-light text-muted mb-0">UFPa</p>
-              </div>
-            </div>
+      <!-- navbar init -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <div class="media d-flex align-items-center"><img src="http://labvis.ufpa.br//images/logo.png" alt="LABVIS" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"> </div> <a class="navbar-brand" href="index">LABVIS</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gráficos
+              </a>
+                <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+                <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index">Início</a>
+                  <a class="dropdown-item" href="bar">Gráfico de barra</a>
+                  <a class="dropdown-item" href="pie">Gráfico de pizza</a>
+                  <a class="dropdown-item" href="scatter">Scatter Plot</a>
+                </div>
+              </li>
+              <a class="dropdown-item" href="http://labvis.ufpa.br/">LABVIS</a>
+              <a class="dropdown-item" href="#">UFPa</a>
+              <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Sobre o projeto</a>
+            
+            </ul>
           </div>
-        
-          <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
-        
-          <ul class="nav flex-column bg-white mb-0">
-            <li class="nav-item">
-              <a href="index" class="nav-link text-dark font-italic bg-light" alt="Inicio">
-                  <svg class="bi bi-house-door-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.5 10.995V14.5a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5h-4a.5.5 0 01-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
-                      <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
-                    </svg>
-                        Início
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="about" class="nav-link text-dark font-italic">
-                  <svg class="bi bi-folder-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M9.828 3h3.982a2 2 0 011.992 2.181l-.637 7A2 2 0 0113.174 14H2.826a2 2 0 01-1.991-1.819l-.637-7a1.99 1.99 0 01.342-1.31L.5 3a2 2 0 012-2h3.672a2 2 0 011.414.586l.828.828A2 2 0 009.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 006.172 2H2.5a1 1 0 00-1 .981l.006.139z" clip-rule="evenodd"/>
-                    </svg>
-                        Sobre o projeto
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="http://labvis.ufpa.br/" class="nav-link text-dark font-italic">
-                  <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                    </svg>
-                        LABVIS
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/nolovedeepdev/flask" class="nav-link text-dark font-italic">
-                  <svg class="bi bi-building" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M15.285.089A.5.5 0 0115.5.5v15a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5V14h-1v1.5a.5.5 0 01-.5.5H1a.5.5 0 01-.5-.5v-6a.5.5 0 01.418-.493l5.582-.93V3.5a.5.5 0 01.324-.468l8-3a.5.5 0 01.46.057zM7.5 3.846V8.5a.5.5 0 01-.418.493l-5.582.93V15h8v-1.5a.5.5 0 01.5-.5h2a.5.5 0 01.5.5V15h2V1.222l-7 2.624z" clip-rule="evenodd"/>
-                      <path fill-rule="evenodd" d="M6.5 15.5v-7h1v7h-1z" clip-rule="evenodd"/>
-                      <path d="M2.5 11h1v1h-1v-1zm2 0h1v1h-1v-1zm-2 2h1v1h-1v-1zm2 0h1v1h-1v-1zm6-10h1v1h-1V3zm2 0h1v1h-1V3zm-4 2h1v1h-1V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm-2 2h1v1h-1V7zm2 0h1v1h-1V7zm-4 0h1v1h-1V7zm0 2h1v1h-1V9zm2 0h1v1h-1V9zm2 0h1v1h-1V9zm-4 2h1v1h-1v-1zm2 0h1v1h-1v-1zm2 0h1v1h-1v-1z"/>
-                    </svg>
-                        UFPa
-                    </a>
-            </li>
-          </ul>
-        
-          <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
-        
-            <li class="nav-item">
-              <a href="bar" class="nav-link text-dark font-italic" > 
-                  <svg class="bi bi-bar-chart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="4" height="5" x="1" y="10" rx="1"/>
-                      <rect width="4" height="9" x="6" y="6" rx="1"/>
-                      <rect width="4" height="14" x="11" y="1" rx="1"/>
-                    </svg> 
-                    Bar charts
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="pie" class="nav-link text-dark font-italic">
-                  <svg class="bi bi-pie-chart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
-                      <path fill-rule="evenodd" d="M7.5 7.793V1h1v6.5H15v1H8.207l-4.853 4.854-.708-.708L7.5 7.793z" clip-rule="evenodd"/>
-                    </svg>
-                    Pie charts
-                    </a>
-            </li>
-            <li class="nav-item">
-              <a href="scatter" class="nav-link text-dark font-italic">
-                  <svg class="bi bi-graph-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 0h1v16H0V0zm1 15h15v1H1v-1z"/>
-                      <path fill-rule="evenodd" d="M14.39 4.312L10.041 9.75 7 6.707l-3.646 3.647-.708-.708L7 5.293 9.959 8.25l3.65-4.563.781.624z" clip-rule="evenodd"/>
-                      <path fill-rule="evenodd" d="M10 3.5a.5.5 0 01.5-.5h4a.5.5 0 01.5.5v4a.5.5 0 01-1 0V4h-3.5a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                    </svg>
-                    Scatter Plot
-                    </a>
-            </li>
-          </ul>
         </div>
-        <!-- End vertical navbar -->
-
+      </nav>
+      <!-- end navbar -->
         <!-- Page content holder -->
         <div class="page-content p-5" id="content">
       
@@ -168,50 +105,15 @@
                 </div>
             </div>
             
-
-            <!--End gallery-->
-            <div class="text-center">
-              <!-- Button HTML (to Trigger Modal) -->
-              <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
-            </div>
-
-              <!-- Modal HTML -->
-              <div id="myModal" class="modal fade">
-                <div class="modal-dialog modal-login">
-                  <div class="modal-content">
-                    <div class="modal-header">				
-                      <h4 class="modal-title">Interação</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                      <form action="/examples/actions/confirmation.php" method="post">
-                        <div id="view"></div>
-                        <script type="text/javascript">
-                          var view;
-
-                          fetch('https://vega.github.io/vega/examples/bar-chart.vg.json')
-                            .then(res => res.json())
-                            .then(spec => render(spec))
-                            .catch(err => console.error(err));
-
-                          function render(spec) {
-                            view = new vega.View(vega.parse(spec), {
-                              renderer:  'canvas',  // renderer (canvas or svg)
-                              container: '#view',   // parent DOM container
-                              hover:     true       // enable hover processing
-                            });
-                            return view.runAsync();
-                          }
-                        </script>
-                      </form>	
-                    </div>
-                  </div>
-                </div>
-              </div>     
-            </header>
+      <!--End gallery-->
+      <br>
       <!-- Footer -->
-      <p class="m-0 text-center text-white"> <br><strong>Copyright &copy; 2020, Universidade Federal Do Pará Laboratório de Visualização, Interação e Sistemas Inteligentes</strong></p>
-
+      <footer class="py-5 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+      </footer>
     </body>
       <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -226,25 +128,5 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-      
-      <script>
-        $(function() {
-          // Sidebar toggle behavior
-          $('#sidebarCollapse').on('click', function() {
-            $('#sidebar, #content').toggleClass('active');
-          });
-        });
-
-      </script>
-
-      <!-- Script from AJAX-->
-      <script>
-        $(document).ready(function(){
-          $("button").click(function(){
-            $("#box1").load("http://127.0.0.1:5000/api");
-          });
-        });
-      </script>
 
 </html>

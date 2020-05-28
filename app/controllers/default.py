@@ -36,12 +36,11 @@ def main(): # fuction that returns the axes
     obj_img = cv2.imread(r'app/static/img/bar0.png')
     altura, largura, cores = obj_img.shape
 
-    for y in range(0, altura):
+    for y in range(0, altura): # laço que pega os eixos
         for x in range(0, largura):
-            x = str(x); y = str(y)
+            x = str(x); y = str(y) # transforma as variaveis em string p/ não haver possíveis erros
 
-    return 'x={}, y={}; '.format(x,y)
+    return 'x={}, y={}; '.format(x, y) # return que aparece no front-end
 
 if __name__ == '__main__':
     app.run()
-

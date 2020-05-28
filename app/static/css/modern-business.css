@@ -6,18 +6,13 @@
 
 /*! NAVBAR */
         
-@media (max-width: 991px) {
-  .navbar {
-      background: rgb(1, 16, 83) !important;
-  }
-}
-
-body {
-  background: #599fd9;
-  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-  background: linear-gradient(to right, #599fd9, #c2e59c);
-  min-height: 100vh;
-  overflow-x: hidden;
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+ body {
+  padding-top: 56px;
 }
 
 .carousel-item {
@@ -33,4 +28,3 @@ body {
 .portfolio-item {
   margin-bottom: 30px;
 }
-
