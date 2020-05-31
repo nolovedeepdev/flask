@@ -1,46 +1,137 @@
-/* Change this breakpoint if you change the breakpoint of the navbar */
+        /*custum from navbar*/
+        .vertical-nav {
+          min-width: 17rem;
+          width: 17rem;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s;
+        }
+        .page-content {
+          width: calc(100% - 17rem);
+          margin-left: 17rem;
+          transition: all 0.4s;
+        }
+        /* for toggle behavior */
+        #sidebar.active {
+          margin-left: -17rem;
+        }
+        #content.active { 
+          width: 100%;
+          margin: 0;
+        }
+        @media (max-width: 768px) {
+          #sidebar {
+            margin-left: -17rem;
+          }
+          #sidebar.active {
+            margin-left: 0;
+          }
+          #content {
+            width: 100%;
+            margin: 0;
+          }
+          #content.active {
+            margin-left: 17rem;
+            width: calc(100% - 17rem);
+          }
+        }
+        /*
+        *
+        * ==========================================
+        * FOR DEMO PURPOSE
+        * ==========================================
+        *
+        */
+        body {
+          background: #599fd9;
+          background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+          background: linear-gradient(to right, #599fd9, #c2e59c);
+          min-height: 100vh;
+          overflow-x: hidden;
+        }
 
-@media (min-width: 992px) {
-  .animate {
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-}
+        .separator {
+          margin: 3rem 0;
+          border-bottom: 1px dashed #fff;
+        }
+        .text-uppercase {
+          letter-spacing: 0.1em;
+        }
+        .text-gray {
+          color: #aaa;
+        }
+          
+        /* Other styles for the page not related to the animated dropdown */
+        
+        /* css from back-to-top */
+        .back-to-top {
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display:none;
+        }
 
-@keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-  100% {
-    transform:translateY(0rem);
-    opacity: 1;
-  }
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: transform;
-    -webkit-opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    -webkit-opacity: 1;
-  }
-  0% {
-    -webkit-transform: translateY(1rem);
-    -webkit-opacity: 0;
-  }
-}
-
-.slideIn {
-  -webkit-animation-name: slideIn;
-  animation-name: slideIn;
-}
-
+        /*Ajax from interactive charts*/
+        body {
+          font-family: 'Varela Round', sans-serif;
+        }
+        .modal-login {
+          width: 350px;
+        }
+        .modal-login .modal-content {
+          padding: 20px;
+          border-radius: 1px;
+          border: none;
+        }
+        .modal-login .modal-header {
+          border-bottom: none;
+              position: relative;
+          justify-content: center;
+        }
+        .modal-login h4 {
+          text-align: center;
+          font-size: 26px;
+        }
+          .modal-login .form-group {
+              margin-bottom: 20px;
+          }
+        .modal-login .form-control, .modal-login .btn {
+          min-height: 40px;
+          border-radius: 30px; 
+              font-size: 15px;
+              transition: all 0.5s;
+        }
+          .modal-login .form-control {
+              font-size: 13px;
+          }
+          .modal-login .form-control:focus {
+              border-color: #a177ff;
+          }
+        .modal-login .hint-text {
+          text-align: center;
+          padding-top: 10px;
+        }
+        .modal-login .close {
+              position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+        .modal-login .btn {
+          background: #a177ff;
+          border: none;
+          line-height: normal;
+        }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+          background: #8753ff;
+        }
+        .modal-login .hint-text a {
+          color: #999;
+        }
+        .trigger-btn {
+          display: inline-block;
+          margin: 100px auto;
+        }
