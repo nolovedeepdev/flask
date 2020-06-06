@@ -1,7 +1,7 @@
 # Project 
 
-![Image description](print(2).png)
-![Image description](print(3).png)
+![Image description](flask/print(2).png)
+![Image description](flask/print(3).png)
 
 ## [Start Bootstrap - Modern Business](https://startbootstrap.com/template-overviews/modern-business/)
 
