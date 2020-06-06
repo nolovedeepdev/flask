@@ -10,13 +10,15 @@ Intitulado Proposta e Avaliação de Templates de descrição Textual para vocal
 * > pip install flask
 * > pip install flask-sqlalchemy
 * > pip install opencv-python
+* > pip install Flask-Migrate
+* > pip install Flask-Script
 * [The Bootstrap's template repository](https://github.com/nolovedeepdev/flask/tree/master/app/templates)
 
 ## Usage
 
-### Basic Usage
+### Basic
 Após a instalação da linguagem Python(3.8) e do framework Flask, estruturar 
-### Advanced Usage
+> python run.py
 
 ## Bugs and Issues
 

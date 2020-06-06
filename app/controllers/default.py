@@ -34,7 +34,7 @@ def inte():
 @app.route("/interact/axis", methods= ['POST','GET'])
 def main(): # fuction that returns the axes
     obj_img = cv2.imread(r'app/static/img/bar0.png')
-    altura, largura = obj_img.shape
+    altura, largura, cores = obj_img.shape
 
     for y in range(0, altura): # laço que pega os eixos
         for x in range(0, largura):

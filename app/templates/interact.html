@@ -8,7 +8,6 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='css/modern-business.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar2.css') }}">
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body onload="draw();">
     <!-- navbar init -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -34,7 +33,7 @@
             </a>
               <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
               <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="index">Início</a>
+                <a class="dropdown-item" href="/index">Início</a>
                 <a class="dropdown-item" href="bar">Gráfico de barra</a>
                 <a class="dropdown-item" href="pie">Gráfico de pizza</a>
                 <a class="dropdown-item" href="scatter">Scatter Plot</a>
@@ -42,9 +41,8 @@
             </li>
             <a class="dropdown-item" href="http://labvis.ufpa.br/">LABVIS</a>
             <a class="dropdown-item" href="https://portal.ufpa.br/">UFPa</a>
-            <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Sobre o projeto</a>
-          
-          </ul>
+            <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Sobre o projeto</a>     
+          </ul>       
         </div>
       </div>
     </nav>
@@ -61,18 +59,12 @@
         <h4>Static</h4>
         <img id="myimg" style="width: 450px; height: 275px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
         
-        <!--Axis grid-->
-        <div ></div>   
+        <!--Axis grid--> 
         <div id="axis" class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <strong>Click</strong> na imagem para mostrar os eixos!.<br>
         </div>
-        
-        <!--Chart from VEGA to interact-->
-        <!-- <h4>Interact</h4>
-        <div id="view"></div> -->
-        
-        <h4><br></h4>
+
         <div class="custom-file">
           <input type="file" class="custom-file-input" name="image" id="image">
           <label class="custom-file-label" for="image">Select image...</label>
@@ -82,27 +74,10 @@
     </div>
 
   </body>
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-  
-  <!-- script for Vega -->
-  <script type="text/javascript">
-    var view;
 
-    fetch('https://vega.github.io/vega/examples/bar-chart.vg.json')
-      .then(res => res.json())
-      .then(spec => render(spec))
-      .catch(err => console.error(err));
-
-    function render(spec) {
-      view = new vega.View(vega.parse(spec), {
-        renderer:  'canvas',  // renderer (canvas or svg)
-        container: '#view',   // parent DOM container
-        hover:     true       // enable hover processing
-      });
-      return view.runAsync();
-    }
-  </script>
 
   <!-- the AJAX function that communicates with backend's image (with a mouseclick) -->
   <script>
