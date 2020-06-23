@@ -57,16 +57,17 @@
         
         <!--Static Image-->
         <h4>Static</h4>
-        <img id="myimg" style="width: 450px; height: 275px;" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
-        
+        <img id="myimg" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
+
         <!--Axis grid--> 
         <div id="axis" class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Click</strong> na imagem para mostrar os eixos!.<br>
+          <strong>Click duas vezes (2x)</strong> na imagem para mostrar os eixos!<br>
         </div>
-
+        <h4>Output</h4>
+        <img src="{{ url_for('image_output') }}">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" name="image" id="image">
+          <input enctype="multipart/form-data" type="file" class="custom-file-input" name="image" id="image">
           <label class="custom-file-label" for="image">Select image...</label>
         </div>
         <button type="submit" class="btn btn-success">Upload image</button>
