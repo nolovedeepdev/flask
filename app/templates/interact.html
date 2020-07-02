@@ -14,31 +14,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </head>
-  <body onload="draw();">
+
+  <body>
     <!-- navbar init -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <div class="media d-flex align-items-center"><img src="http://labvis.ufpa.br//images/logo.png" alt="LABVIS" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"> </div> <a class="navbar-brand" href="index">LABVIS</a>
+        <div class="media d-flex align-items-center"><img src="http://labvis.ufpa.br//images/logo.png" alt="LABVIS" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"> </div> <a class="navbar-brand" href="index/">LABVIS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Gráficos
-            </a>
-              <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
-              <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/index">Início</a>
-                <a class="dropdown-item" href="bar">Gráfico de barra</a>
-                <a class="dropdown-item" href="pie">Gráfico de pizza</a>
-                <a class="dropdown-item" href="scatter">Scatter Plot</a>
-              </div>
-            </li>
             <a class="dropdown-item" href="http://labvis.ufpa.br/">LABVIS</a>
             <a class="dropdown-item" href="https://portal.ufpa.br/">UFPa</a>
             <a class="dropdown-item" href="https://github.com/nolovedeepdev/flask">Sobre o projeto</a>     
@@ -56,53 +44,37 @@
         </button>
         
         <!--Static Image-->
-        <h4>Static</h4>
-        <img id="myimg" class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar0.png') }}">
+        <h4><strong> Static </strong></h4>
+        <hr>
+        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/bar17.png') }}">
 
         <!--Axis grid--> 
         <div id="axis" class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Click duas vezes (2x)</strong> na imagem para mostrar os eixos!<br>
+          <strong>Click</strong> na imagem para extrair os dados!<br>
         </div>
-        <h4>Output</h4>
-        <img src="{{ url_for('image_output') }}">
+
         <div class="custom-file">
           <input enctype="multipart/form-data" type="file" class="custom-file-input" name="image" id="image">
           <label class="custom-file-label" for="image">Select image...</label>
         </div>
         <button type="submit" class="btn btn-success">Upload image</button>
+        <h1> </h1>
+        <br>
+        <h4><strong>Canvas</strong></h4>
+        <hr>
+        <canvas id="myCanvas"></canvas>
+        <hr>
+
       </form>
     </div>
 
   </body>
+    <!--Ajax's Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-
-
-  <!-- the AJAX function that communicates with backend's image (with a mouseclick) -->
-  <script>
-  document.getElementById("myimg").addEventListener('click', add); // take te id from img
-  function add()
-  {
-    const api_url = " http://127.0.0.1:5000/interact/axis";
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("axis").append(this.responseText); // where the axis info appears
-      }
-    };
-    xhttp.open("GET", api_url, true);
-    xhttp.send();
-  }
-  </script>
-
-  <script>
-  $(document).ready(function(){
-    $(".close").click(function(){
-      $("#myAlert").alert("close");
-    });
-  });
-  </script>
+    <!-- Ajax for axis-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ajaxscript.js') }}"></script>
 
 </html>
